@@ -20,12 +20,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.13'
+        python-version: '3.10.7'
     
     - name: Install poetry
-      run: |
-        curl -sSL https://install.python-poetry.org | python3 -
-        export PATH=$HOME/.local/bin:$PATH
+      run: snok/install-poetry@v1
 
     - name: Install dependencies using poetry
       run: poetry install
