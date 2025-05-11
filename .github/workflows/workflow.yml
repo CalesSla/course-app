@@ -27,8 +27,8 @@ jobs:
         curl -sSL https://install.python-poetry.org | python3 -
         export PATH=$HOME/.local/bin:$PATH
 
-    - name: Install dependencies using poetry
-      run: poetry install
+    # - name: Install dependencies using poetry
+    #   run: poetry install
 
     # - name: Link with flake8
     #   run: poetry run make check
