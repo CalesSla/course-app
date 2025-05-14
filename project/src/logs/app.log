@@ -1,0 +1,45 @@
+2025-05-12 20:50:45.269 | INFO     | __main__:main:7 - running the application...
+2025-05-12 20:50:45.270 | INFO     | model.model_inference:load_model:33 - checking the existence of model config file at model/models/rf_db_v3
+2025-05-12 20:50:45.270 | INFO     | model.model_inference:load_model:41 - model rf_db_v3 exists! -> loading model configuration file
+2025-05-12 20:50:45.279 | INFO     | model.model_inference:predict:50 - making prediction!
+2025-05-12 20:50:45.298 | INFO     | __main__:main:23 - prediction = [2087.00060629]
+2025-05-12 20:50:51.312 | INFO     | __main__:main:7 - running the application...
+2025-05-12 20:50:51.312 | INFO     | model.model_inference:load_model:33 - checking the existence of model config file at model/models/rf_db_v3
+2025-05-12 20:50:51.312 | INFO     | model.model_inference:load_model:41 - model rf_db_v3 exists! -> loading model configuration file
+2025-05-12 20:50:51.322 | INFO     | model.model_inference:predict:50 - making prediction!
+2025-05-12 20:50:51.341 | INFO     | __main__:main:23 - prediction = [2087.00060629]
+2025-05-12 20:51:20.892 | INFO     | __main__:main:7 - running the application...
+2025-05-12 20:51:20.892 | INFO     | model.model_inference:load_model:33 - checking the existence of model config file at model/models/rf_db_v3
+2025-05-12 20:51:20.893 | ERROR    | __main__:<module>:27 - An error has been caught in function '<module>', process 'MainProcess' (90621), thread 'MainThread' (8330577984):
+Traceback (most recent call last):
+
+> File "/Users/slavacalestru/Desktop/course-app/src/runner_inference.py", line 27, in <module>
+    main()
+
+  File "/Users/slavacalestru/Desktop/course-app/src/runner_inference.py", line 9, in main
+    ml_svc.load_model()
+
+  File "/Users/slavacalestru/Desktop/course-app/src/model/model_inference.py", line 39, in load_model
+    raise FileNotFoundError("Model file does not exist!")
+
+FileNotFoundError: Model file does not exist!
+2025-05-12 20:51:50.437 | INFO     | __main__:main:7 - running the application...
+2025-05-12 20:51:50.438 | INFO     | model.model_builder:train_model:32 - building the model of model config file at model/models/rf_db_v3
+2025-05-12 20:51:50.438 | INFO     | model.pipeline.model:build_model:11 - starting up model building pipeline
+2025-05-12 20:51:50.438 | INFO     | model.pipeline.preparation:prepare_data:13 - starting up preprocessing pipeline
+2025-05-12 20:51:50.438 | INFO     | model.pipeline.collection:load_data_from_db:10 - extracting the table from database
+2025-05-12 20:51:50.451 | INFO     | model.pipeline.preparation:_encode_cat_cols:22 - encoding categorical columns ['balcony', 'parking', 'furnished', 'garage', 'storage']
+2025-05-12 20:51:50.456 | INFO     | model.pipeline.preparation:_parse_garden_col:27 - parsing garden column
+2025-05-12 20:51:50.457 | INFO     | model.pipeline.model:_get_x_y:37 - defining X and Y variables. 
+X vars: ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes']
+y vars: rent
+2025-05-12 20:51:50.458 | INFO     | model.pipeline.model:_split_train_test:45 - splitting data into train and test sets
+2025-05-12 20:51:50.460 | INFO     | model.pipeline.model:_train_model:51 - training a model with hyperparameters
+2025-05-12 20:51:50.460 | DEBUG    | model.pipeline.model:_train_model:55 - grid space = {'n_estimators': [100, 200, 300], 'max_depth': [3, 6, 9, 12]}
+2025-05-12 20:52:13.793 | INFO     | model.pipeline.model:_evaluate_model:70 - evaluating model performance. SCORE=0.718817350623761
+2025-05-12 20:52:13.793 | INFO     | model.pipeline.model:_save_model:76 - saving model to a directory: model/models/rf_db_v3
+2025-05-12 20:52:43.784 | INFO     | __main__:main:7 - running the application...
+2025-05-12 20:52:43.784 | INFO     | model.model_inference:load_model:33 - checking the existence of model config file at model/models/rf_db_v3
+2025-05-12 20:52:43.784 | INFO     | model.model_inference:load_model:41 - model rf_db_v3 exists! -> loading model configuration file
+2025-05-12 20:52:43.791 | INFO     | model.model_inference:predict:50 - making prediction!
+2025-05-12 20:52:43.804 | INFO     | __main__:main:23 - prediction = [1897.06514831]
